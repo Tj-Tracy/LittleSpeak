@@ -1,0 +1,9 @@
+{
+  "name": "Whistler",
+  "description": "secure chat app",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socketio": "^1.0.0"
+  }
+}
