@@ -13,6 +13,7 @@ socket.on('newUser', function(user, roomID) {
 //the username that broacasted it
 socket.on('recieveMessage', function(msg, user) {
     $('div#chatBox').append('<p class="important">' + user + ': </p><p>' + msg + '</p>');
+    $('div#chatBox').animate({ scrollTop: $('div#chatBox').height() }, 1000);
 });
 
 //when a new user joins, update the list of users currently in the room
