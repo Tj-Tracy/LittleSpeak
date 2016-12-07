@@ -3,7 +3,8 @@ var express = require('express'),
     app = express(),
     http = require('http'),
     server = http.createServer(app),
-    io = require('socket.io').listen(server);
+    io = require('socket.io').listen(server),
+    validator = require('validator');
 
 app.use("/public/scripts", express.static(__dirname + '/public/scripts'));
 app.use("/public/css", express.static(__dirname + '/public/css'));
@@ -60,6 +61,7 @@ io.sockets.on('connection', function(socket) {
     //when a message is sent, show it to the client
     socket.on('sendMessage', function(msg) {
         if(!msg == ""){
+            msg = validator.escape(msg);
             io.in(users[socket.id].roomID).emit('recieveMessage', msg, socket.username);
         }
 
