@@ -1,2 +1,2 @@
-# SecretChat
-Because I want my code. I wrote it after all.
+# LittleSpeak
+A tiny chat app I wrote for fun
